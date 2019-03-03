@@ -2,7 +2,7 @@
 //Created 19/04/2017
 //Updated 19/04/2017
 
-#include "userFunctions.h"
+#include "../include/userFunctions.h"
 
 void listContacts() {
     breakPage();

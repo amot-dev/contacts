@@ -2,7 +2,7 @@
 //Created 19/04/2017
 //Updated 19/04/2017
 
-#include "devFunctions.h"
+#include "../include/devFunctions.h"
 
 int getUserLine(string username) {
     int line = 0;                       //temp hold for userLine

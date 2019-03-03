@@ -2,7 +2,7 @@
 //Created 19/04/2017
 //Updated 19/04/2017
 
-#include "accountFunctions.h"
+#include "../include/accountFunctions.h"
 
 void accountWizard() {
     bool goodName = true;               //if the user picked a good username

@@ -5,8 +5,8 @@
 #ifndef USERFUNCTIONS_H
 #define USERFUNCTIONS_H
 
-#include "../../include/Time.h"
-#include "../../include/IO.h"
+#include "time.h"
+#include "io.h"
 #include "classes.h"
 
 extern int selector;

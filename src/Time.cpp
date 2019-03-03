@@ -2,7 +2,7 @@
 //Created 07/04/2017
 //Updated 15/04/2017
 
-#include "../include/Time.h"
+#include "../include/time.h"
 
 //returns current times
 string timeNow() {

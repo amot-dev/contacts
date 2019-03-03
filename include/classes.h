@@ -9,7 +9,7 @@
 #include <vector>
 #include <sstream>
 #include <algorithm>
-#include "../../include/IO.h"
+#include "io.h"
 
 extern stringstream con;
 

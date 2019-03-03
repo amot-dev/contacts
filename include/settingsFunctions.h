@@ -6,8 +6,8 @@
 #define SETTINGSFUNCTIONS_H
 
 #include "classes.h"
-#include "../../include/Time.h"
-#include "../../include/IO.h"
+#include "time.h"
+#include "io.h"
 #include "devFunctions.h"
 
 extern bool forceLog;

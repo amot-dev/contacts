@@ -6,8 +6,8 @@
 #define DEVFUNCTIONS_H
 
 #include <sstream>
-#include "../../include/Time.h"
-#include "../../include/IO.h"
+#include "time.h"
+#include "io.h"
 
 extern bool userLogin;
 

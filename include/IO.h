@@ -8,7 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "Spacing.h"
+#include "spacing.h"
 using namespace std;
 
 int numLines(string fileName);

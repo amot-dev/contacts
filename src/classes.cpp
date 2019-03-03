@@ -2,7 +2,7 @@
 //Created 16/04/2017
 //Updated 16/04/2017
 
-#include "classes.h"
+#include "../include/classes.h"
 
 void config :: loadConfig(string username) {
     con.str("");                                                    //clear con stringstream

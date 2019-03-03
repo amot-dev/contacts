@@ -2,7 +2,7 @@
 //Created 01/03/2017
 //Updated 07/04/2017
 
-#include "../include/Spacing.h"
+#include "../include/spacing.h"
 
 //outputs a character multiple times to the console
 void printChar(int charNum, char charType) {

@@ -5,9 +5,9 @@
 //Last Updated:         12/04/2017
 //Known Limitations:    Spacing not allowed for any input
 
-#include "accountFunctions.h"
-#include "userFunctions.h"
-#include "settingsFunctions.h"
+#include "../include/accountFunctions.h"
+#include "../include/userFunctions.h"
+#include "../include/settingsFunctions.h"
 using namespace std;
 
 //CONSTANT VARIABLES

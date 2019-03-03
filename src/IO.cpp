@@ -2,7 +2,7 @@
 //Created 01/03/2017
 //Updated 07/04/2017
 
-#include "../include/IO.h"
+#include "../include/io.h"
 
 //get the number of lines in a file
 int numLines(string fileName) {
