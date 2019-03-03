@@ -1,7 +1,3 @@
-//IO.H v1.0 BY ALEXANDER MOT
-//Created 01/03/2017
-//Updated 29/03/2017
-
 #ifndef IO_H
 #define IO_H
 

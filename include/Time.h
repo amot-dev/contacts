@@ -1,7 +1,3 @@
-//TIME.H v1.0 BY ALEXANDER MOT
-//Created 07/04/2017
-//Updated 15/04/2017
-
 #ifndef WAIT_H
 #define WAIT_H
 

@@ -1,7 +1,3 @@
-//TIME.CPP v1.0 BY ALEXANDER MOT
-//Created 07/04/2017
-//Updated 15/04/2017
-
 #include "../include/time.h"
 
 //returns current times

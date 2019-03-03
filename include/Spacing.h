@@ -1,7 +1,3 @@
-//SPACING.H v1.1 BY ALEXANDER MOT
-//Created 01/03/2017
-//Updated 01/03/2017
-
 #ifndef SPACING_H
 #define SPACING_H
 

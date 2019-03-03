@@ -1,7 +1,3 @@
-//SPACING.CPP v1.1 BY ALEXANDER MOT
-//Created 01/03/2017
-//Updated 07/04/2017
-
 #include "../include/spacing.h"
 
 //outputs a character multiple times to the console

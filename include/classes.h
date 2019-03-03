@@ -1,7 +1,3 @@
-//CLASSES.H v1.0 BY ALEXANDER MOT
-//Created 15/04/2017
-//Updated 16/04/2017
-
 #ifndef CLASSES_H
 #define CLASSES_H
 

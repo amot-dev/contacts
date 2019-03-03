@@ -1,7 +1,3 @@
-//IO.CPP v1.0 BY ALEXANDER MOT
-//Created 01/03/2017
-//Updated 07/04/2017
-
 #include "../include/io.h"
 
 //get the number of lines in a file

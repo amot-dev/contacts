@@ -1,7 +1,3 @@
-//ACCOUNTFUNCTIONS.CPP v1.0 BY ALEXANDER MOT
-//Created 19/04/2017
-//Updated 19/04/2017
-
 #include "../include/accountFunctions.h"
 
 void accountWizard() {

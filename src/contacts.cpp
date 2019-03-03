@@ -1,10 +1,3 @@
-//Title:                Contacts
-//Description:          View and create contacts with multiple accounts
-//Created By:           Sasha Mot
-//Date Created:         12/04/2017
-//Last Updated:         12/04/2017
-//Known Limitations:    Spacing not allowed for any input
-
 #include "../include/accountFunctions.h"
 #include "../include/userFunctions.h"
 #include "../include/settingsFunctions.h"
