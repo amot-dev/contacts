@@ -4,7 +4,7 @@
 using namespace std;
 
 //CONSTANT VARIABLES
-const int devPass = 354635494;          //lets the 'user' access the dev menu
+const int adminPass = 354635494;          //lets the 'user' access the admin menu
 
 //BOOLEAN VARIABLES
 bool run = true;                        //determines whether the program will run
@@ -97,8 +97,8 @@ void mainMenu(bool userLogin) {
             case 3:
                 run = false;                                            //stop looping the program
                 break;
-            case devPass:
-                devMenu();                                              //open the dev menu
+            case adminPass:
+                adminMenu();                                              //open the admin menu
                 break;
         }
     }

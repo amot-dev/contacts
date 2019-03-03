@@ -1,5 +1,5 @@
-#ifndef DEVFUNCTIONS_H
-#define DEVFUNCTIONS_H
+#ifndef ADMINFUNCTIONS_H
+#define ADMINFUNCTIONS_H
 
 #include <sstream>
 #include "time.h"
@@ -15,6 +15,6 @@ extern stringstream con;
 int getUserLine(string username);
 void deleteUser(string deletedUser, int userLine);
 void deletionWizard();
-void devMenu();
+void adminMenu();
 
 #endif

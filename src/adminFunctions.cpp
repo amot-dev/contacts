@@ -1,4 +1,4 @@
-#include "../include/devFunctions.h"
+#include "../include/adminFunctions.h"
 
 int getUserLine(string username) {
     int line = 0;                       //temp hold for userLine
@@ -66,11 +66,11 @@ void deletionWizard() {
     }
     wait(1);
 }
-void devMenu() {
-    bool dev = true;                    //determines whether the dev menu will run
-    while(dev) {
+void adminMenu() {
+    bool admin = true;                    //determines whether the admin menu will run
+    while(admin) {
         breakPage();
-        cout << "Developper Menu\n";
+        cout << "Administrator Menu\n";
         cout << "===============\n\n";
         cout << "Press '1' to delete specific user\n";
         cout << "Press '2' to delete all users\n";
@@ -95,7 +95,7 @@ void devMenu() {
                 break;
             case 3:
                 userLogin = false;                                      //log out any users that might be logged on (redundant)
-                dev = false;                                            //stop looping dev menu
+                admin = false;                                          //stop looping admin menu
                 break;
         }
     }

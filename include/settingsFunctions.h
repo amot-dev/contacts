@@ -4,7 +4,7 @@
 #include "classes.h"
 #include "time.h"
 #include "io.h"
-#include "devFunctions.h"
+#include "adminFunctions.h"
 
 extern bool forceLog;
 
