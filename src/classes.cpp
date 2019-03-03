@@ -6,8 +6,8 @@
 
 void config :: loadConfig(string username) {
     con.str("");                                                    //clear con stringstream
-    con << "user-" << username << "/format.txt";                    //output config filepath to con
-    firstNameFirstTemp = fromFile(1, con.str());                     //update config temps
+    con << "../data/user-" << username << "/format.txt";            //output config filepath to con
+    firstNameFirstTemp = fromFile(1, con.str());                    //update config temps
     emailBeforePhoneTemp = fromFile(2, con.str());
     formatPhoneTemp = fromFile(3, con.str());
     formatPhoneCharTemp = fromFile(4, con.str());
@@ -56,7 +56,7 @@ void sortCon :: organise(string username, int passLine) {
 }
 string sortCon :: setPath(string username) {
     con.str("");
-    con << "user-" << username << "/@" << username << ".txt";
+    con << "../data/user-" << username << "/@" << username << ".txt";
     return con.str();
 }
 

@@ -9,12 +9,12 @@ void listContacts() {
     person contact;                     //holds first and last name of person
     vector <string> hold;               //holds the open file
     con.str("");
-    con << "user-" << username << "/@" << username << ".txt";
+    con << "../data/user-" << username << "/@" << username << ".txt";
     hold = saveFile(con.str());
     hold.erase (hold.begin()+(passLine - 1));                           //remove password from list of contacts
     for (int i = 0; i < static_cast<int>(hold.size()); i++) {
         con.str("");
-        con << "user-" << username << "/entry-" << hold[i] << ".txt";   //open contact file
+        con << "../data/user-" << username << "/entry-" << hold[i] << ".txt";   //open contact file
         contact.firstName = fromFile(1, con.str());                     //add names to contact person
         contact.lastName = fromFile(2, con.str());
         if (rules.firstNameFirst) {
@@ -94,7 +94,7 @@ void listContactsFancy(person contact) {
 person getContact(string contactName) {
     person contact;                     //holds contact info
     con.str("");
-    con << "user-" << username << "/entry-" << contactName << ".txt";                                   //open contact file
+    con << "../data/user-" << username << "/entry-" << contactName << ".txt";                           //open contact file
     contact.firstName = fromFile(1, con.str());                     //add all information to contact person
     contact.lastName = fromFile(2, con.str());
     contact.emailNum = fromFileInt(3, con.str());
@@ -113,7 +113,7 @@ void contactViewer() {
     breakPage();
     vector <string> hold;               //holds the open file
     con.str("");
-    con << "user-" << username << "/@" << username << ".txt";
+    con << "../data/user-" << username << "/@" << username << ".txt";
     hold = saveFile(con.str());
     hold.erase (hold.begin()+(passLine - 1));                           //remove password from list of contacts
     for (int i = 0; i < static_cast<int>(hold.size()); i++) {           //for each item in contacts...
@@ -140,7 +140,7 @@ void contactEditWizard() {
     string tempCon;                     //temporary hold for con
     string contactPath;                 //holds the path to the contact being edited
     con.str("");
-    con << "user-" << username << "/@" << username << ".txt";
+    con << "../data/user-" << username << "/@" << username << ".txt";
     hold = saveFile(con.str());                                         //save user file
     hold.erase (hold.begin()+(passLine - 1));                           //remove password from user file
     cout << "Select a contact to edit\n";
@@ -325,7 +325,7 @@ void contactAddWizard() {
         phone.push_back(phoneTemp);
     }
     con.str("");
-    con << "user-" << username << "/" << "entry-" << first << last << ".txt";
+    con << "../data/user-" << username << "/" << "entry-" << first << last << ".txt";
     ofstream contactAddWiz(con.str());
     if (contactAddWiz.is_open()) {
         contactAddWiz << first << "\n" << last << "\n";
@@ -342,7 +342,7 @@ void contactAddWizard() {
     }
     contactAddWiz.close();
     con.str("");
-    con << "user-" << username << "/@" << username << ".txt";
+    con << "../data/user-" << username << "/@" << username << ".txt";
     contactAddWiz.open(con.str(), ios::app);
     if (contactAddWiz.is_open()) {
         contactAddWiz << first << last << "\n";
@@ -361,7 +361,7 @@ void contactRemoveWizard() {
     string contactFile;                 //the path of the contact file
     string tempCon;                     //temporary hold for con
     con.str("");
-    con << "user-" << username << "/@" << username << ".txt";
+    con << "../data/user-" << username << "/@" << username << ".txt";
     tempCon = con.str();
     hold = saveFile(con.str());                                         //save user file
     hold.erase (hold.begin()+(passLine - 1));                           //remove password from user file
@@ -370,7 +370,7 @@ void contactRemoveWizard() {
     clrIgn();
     if (selector <= static_cast<int>(hold.size()) && selector > 0) {    //make sure selected contact is in range
         con.str("");
-        con << "user-" << username << "/entry-" << fromFile((selector + 1), tempCon) << ".txt";
+        con << "../data/user-" << username << "/entry-" << fromFile((selector + 1), tempCon) << ".txt";
         contactFile = con.str();                                        //make copy of contact file path for later use
         contact.firstName = fromFile(1, con.str());                     //get names from contact file
         contact.lastName = fromFile(2, con.str());

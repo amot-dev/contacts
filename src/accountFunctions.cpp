@@ -10,12 +10,12 @@ void accountWizard() {
     int minPassLength = 8;              //the minimum length of a password
 
     breakPage();
-    fileLength = numLines("Accounts.txt");
+    fileLength = numLines("../data/Accounts.txt");
     cout << "Please type in a username: ";
     cin >> username;
     clrIgn();
     for (int i = 1; i <= fileLength; i++) {
-        if (username == fromFile(i, "Accounts.txt")) goodName = false;  //check Accounts.txt for username
+        if (username == fromFile(i, "../data/Accounts.txt")) goodName = false;  //check Accounts.txt for username
     }
     if (goodName == false) {                                            //if the username is already taken
         cout << "\nThat name is already taken\n";
@@ -26,7 +26,7 @@ void accountWizard() {
         cin >> password;
         clrIgn();
         if (static_cast<int>(password.length()) >= minPassLength) {
-            ofstream accountWiz("Accounts.txt", ios::app);              //open Accounts.txt to append
+            ofstream accountWiz("../data/Accounts.txt", ios::app);      //open Accounts.txt to append
             if (accountWiz.is_open()) {
                 accountWiz << username << "\n";                         //add username to Accounts.txt
             }
@@ -35,10 +35,10 @@ void accountWizard() {
             }
             accountWiz.close();                                         //close Accounts.txt
             con.str("");
-            con << "mkdir " << "user-" << username;                     //set con to bash command to create directory for user
+            con << "mkdir " << "../data/user-" << username;             //set con to bash command to create directory for user
             system(con.str().c_str());                                  //execute mkdir command
             con.str("");
-            con << "user-"<< username << "/@" << username << ".txt";    //set con to user file's path
+            con << "../data/user-"<< username << "/@" << username << ".txt";    //set con to user file's path
             accountWiz.open(con.str());                                 //open user file
             if (accountWiz.is_open()) {
                 accountWiz << password << "\n";                         //add password to user file
@@ -48,7 +48,7 @@ void accountWizard() {
             }
             accountWiz.close();
             con.str("");
-            con << "user-" << username << "/format.txt";                //set con to path to config file
+            con << "../data/user-" << username << "/format.txt";        //set con to path to config file
             accountWiz.open(con.str());                                 //open config file
             if (accountWiz.is_open()) {
                 for (int i = 0; i < 3; i++) {                           //for the first 3 rules
@@ -78,9 +78,9 @@ void loginWizard() {
     cin >> username;
     clrIgn();
     con.str("");
-    fileLength = numLines("Accounts.txt");
+    fileLength = numLines("../data/Accounts.txt");
     for(int i = 1; i <= fileLength; i++) {                              //loops through Accounts.txt
-        if (fromFile(i, "Accounts.txt") == username) {                  //if username matches a line
+        if (fromFile(i, "../data/Accounts.txt") == username) {          //if username matches a line
             correctName = true;                                         //user has a valid name
         }
     }
@@ -91,7 +91,7 @@ void loginWizard() {
             cin >> password;
             clrIgn();
             con.str("");
-            con << "user-" << username << "/@" << username << ".txt";   //set con to user file's path
+            con << "../data/user-" << username << "/@" << username << ".txt";   //set con to user file's path
             if (password == fromFile(passLine, con.str())) {            //if password matches username
                 userLogin = true;                                       //set user to logged on
                 loggingOn = 0;                                          //set login attempts to 0

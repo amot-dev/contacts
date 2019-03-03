@@ -7,9 +7,9 @@
 int getUserLine(string username) {
     int line = 0;                       //temp hold for userLine
     int fileLength;                     //the length of the open file
-    fileLength = numLines("Accounts.txt");                              //get file length of Accounts.txt
+    fileLength = numLines("../data/Accounts.txt");                      //get file length of Accounts.txt
     for (int i = 1; i <= fileLength; i++) {                             //go through Accounts.txt
-        if (username == fromFile(i, "Accounts.txt")) {                  //check if username matches anything
+        if (username == fromFile(i, "../data/Accounts.txt")) {          //check if username matches anything
             line = i;                                                   //set line for matching username
         }                                                               //set line to 0 if no line matches
     }
@@ -18,11 +18,11 @@ int getUserLine(string username) {
 void deleteUser(string deletedUser, int userLine) {
     vector <string> hold;               //holds the open file
     con.str("");
-    con << "rm -rf " << "user-" << deletedUser;                         //set con to command to recursively delete user's folder (the -r tag)
+    con << "rm -rf " << "../data/user-" << deletedUser;                 //set con to command to recursively delete user's folder (the -r tag)
     system(con.str().c_str());                                          //execute rm command
-    hold = saveFile("Accounts.txt");                                    //temporarily hold Accounts.txt
+    hold = saveFile("../data/Accounts.txt");                            //temporarily hold Accounts.txt
     hold.erase (hold.begin()+(userLine - 1));                           //remove deleted user from hold
-    ofstream deletionWiz("Accounts.txt", fstream::trunc);               //open Accounts.txt and delete all content
+    ofstream deletionWiz("../data/Accounts.txt", fstream::trunc);       //open Accounts.txt and delete all content
     if (deletionWiz.is_open()) {
         for (int i = 0; i < static_cast<int>(hold.size()); i++) {       //loop through Accounts.txt
             deletionWiz << hold[i] << "\n";                             //put hold into it
@@ -40,16 +40,16 @@ void deletionWizard() {
     int fileLength;                     //the length of the open file
     string deletedUser;                 //the name of the user being deleted
     breakPage();
-    fileLength = numLines("Accounts.txt");
+    fileLength = numLines("../data/Accounts.txt");
     for (int i = 1; i <= fileLength; i++) {
-        cout << fromFile(i, "Accounts.txt") << "\n";                    //show list of all users
+        cout << fromFile(i, "../data/Accounts.txt") << "\n";            //show list of all users
     }
     cout << "\n";
     cout << "What user to delete?: ";
     cin >> deletedUser;
     clrIgn();
     for (int i = 1; i <= fileLength; i++) {
-        if (deletedUser == fromFile(i, "Accounts.txt")) {               //check if user to be deleted exists (the rm -rf tag is dangerous)
+        if (deletedUser == fromFile(i, "../data/Accounts.txt")) {       //check if user to be deleted exists (the rm -rf tag is dangerous)
             isUser = true;
             userLine = getUserLine(deletedUser);                        //get line of user to be deleted
         }
@@ -91,8 +91,8 @@ void devMenu() {
                 cin >> userYN;
                 clrIgn();
                 if (userYN == 'Y' || userYN == 'y') {
-                    system("rm -rf user-*");                            //removes all folders starting with user-
-                    system("rm Accounts.txt");                          //removes Accounts.txt
+                    system("rm -rf ../data/user-*");                    //removes all folders starting with user-
+                    system("rm ../data/Accounts.txt");                  //removes Accounts.txt
                 }
                 else cout << "\nCancelling operation...\n";
                 wait(1);

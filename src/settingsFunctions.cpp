@@ -16,7 +16,7 @@ void passwordWizard() {
     clrIgn();
     if (userYN == 'Y' || userYN == 'y') {
         con.str("");
-        con << "user-" << username << "/@" << username << ".txt";
+        con << "../data/user-" << username << "/@" << username << ".txt";
         hold = saveFile(con.str());
         hold.erase (hold.begin()+(passLine - 1));                       //remove old password
         ofstream passwordWiz(con.str(), fstream::trunc);
@@ -110,7 +110,7 @@ void configWizard() {
             break;
     }
     con.str("");
-    con << "user-" << username << "/format.txt";                        //set con to format file path
+    con << "../data/user-" << username << "/format.txt";                //set con to format file path
     ofstream configWiz(con.str(), fstream::trunc);
     if (configWiz.is_open()) {
         configWiz << rules.firstNameFirstTemp << "\n";                  //update config rules
@@ -133,10 +133,10 @@ void contactClearWizard() {
     clrIgn();
     if (userYN == 'Y' || userYN == 'y') {
         con.str("");
-        con << "rm user-" << username << "/entry-*";
+        con << "rm ../data/user-" << username << "/entry-*";
         system(con.str().c_str());
         con.str("");
-        con << "user-" << username << "/@" << username << ".txt";
+        con << "../data/user-" << username << "/@" << username << ".txt";
         password = fromFile(passLine, con.str());
         ofstream contactClearWiz(con.str(), fstream::trunc);
         if (contactClearWiz.is_open()) {
