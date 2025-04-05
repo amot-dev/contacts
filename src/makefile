@@ -4,6 +4,6 @@ OBJECTS = contacts.cpp
 program: $(OBJECTS)
 	g++ $(OBJECTS) -o $(NAME) -Wall
 
-run prorgam:
+run program:
 	./$(NAME)
 	rm $(NAME)
